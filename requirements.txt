@@ -7,3 +7,6 @@ langchain
 langgraph
 langchain-google-genai
 googlemaps
+tavily-python
+google-search-results
+langchain-tavily
