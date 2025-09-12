@@ -12,6 +12,7 @@ async def generate_guide_endpoint(request: GuideRequest):
     Receives a user prompt and generates a personalized Colorado guide.
     This endpoint maintains a conversation history for each user session.
     """
+    print(f"--- Received API call for user_id: '{request.user_id}' | session_id: '{request.session_id}' ---")
     try:
         response_content = ai_guide_agent.generate_guide(
             request.user_id, request.prompt, request.session_id
