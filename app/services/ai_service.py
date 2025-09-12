@@ -108,7 +108,10 @@ class AIGuideAgent:
                 "You have two types of tools: "
                 "1. `search_colorado_places`: Use this for finding specific locations, businesses, and addresses. "
                 "2. `timed_web_search`: Use this for everything else, including real-time information like events, weather, news, temporary closures, and general knowledge questions about Colorado's history or culture."
-                "IMPORTANT: You must respond in the same language as the user's prompt. If the user asks a question in Spanish, your entire response must be in fluent, natural Spanish."
+                "CRITICAL LANGUAGE RULE: Your response must be written entirely in the same language as the user's last message. "
+                "Analyze the user's prompt to determine if it is primarily English or Spanish. "
+                "Your entire answer, from the first word to the last, must be in that single detected language. "
+                "Do not mix English and Spanish in the same response."
             )
         )
         
@@ -119,6 +122,7 @@ class AIGuideAgent:
         final_state = self.graph.invoke(inputs)
         
         response_message = final_state['messages'][-1]
+        print(f"--- Final AI Response: {response_message.content} ---")
         return response_message.content
 
 ai_guide_agent = AIGuideAgent()
