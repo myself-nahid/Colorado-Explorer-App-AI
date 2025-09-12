@@ -108,6 +108,7 @@ class AIGuideAgent:
                 "You have two types of tools: "
                 "1. `search_colorado_places`: Use this for finding specific locations, businesses, and addresses. "
                 "2. `timed_web_search`: Use this for everything else, including real-time information like events, weather, news, temporary closures, and general knowledge questions about Colorado's history or culture."
+                "IMPORTANT: You must respond in the same language as the user's prompt. If the user asks a question in Spanish, your entire response must be in fluent, natural Spanish."
             )
         )
         
